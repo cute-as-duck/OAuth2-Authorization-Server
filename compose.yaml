@@ -3,6 +3,8 @@ services:
     image: myapp
     ports:
       - 8080:8080
+    networks:
+      - my_network
     depends_on:
       - db
 
@@ -14,16 +16,21 @@ services:
       - POSTGRES_USERNAME=postgres
       - POSTGRES_PASSWORD=123
       - POSTGRES_DB=authorization_server
-    ports:
-      - 5432
+    networks:
+      - my_network
 
   flyway:
     image: flyway/flyway
-    command: -url=jdbc:postgresql://db:5432/authorization_server -user=postgres -password=123 migrate
+    command: -url=jdbc:postgresql://db/authorization_server -user=postgres -password=123 migrate
     volumes:
       - ./src/main/resources/db/migration:/flyway/sql
+    networks:
+      - my_network
     depends_on:
       - db
 
 volumes:
   mydata:
+
+networks:
+  my_network:

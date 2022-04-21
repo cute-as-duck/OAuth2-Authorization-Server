@@ -2,5 +2,5 @@ spring:
   dataSource:
     username: postgres
     password: 123
-    url: jdbc:postgresql://db:5432/authorization_server
+    url: jdbc:postgresql://db/authorization_server
     driver-class-name: org.postgresql.Driver
