@@ -13,7 +13,6 @@ plugins {
 group = 'com.spring.security'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
-project.archivesBaseName = 'app.jar'
 
 repositories {
     mavenCentral()

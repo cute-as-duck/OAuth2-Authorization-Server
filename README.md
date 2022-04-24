@@ -19,9 +19,7 @@ Requests to send:
 
 #### To run application in Docker:
 1. Set Spring profile to `docker`
-2. Execute Gradle build skipping tests - run from repository root:
-`gradle build -x test`
-3. Build an image from a Dockerfile:
+2. Build an image from a Dockerfile:
 `docker build -t myapp .`
-4. Start Docker Compose
+3. Start Docker Compose
 `docker compose up`
